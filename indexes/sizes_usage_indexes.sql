@@ -11,8 +11,7 @@ left join pg_namespace N on
 left join pg_stat_all_indexes S on
 	(S.indexrelname = C.relname)
 where
-	nspname not in ( 'pg_catalog',
-	'information_schema' )
+	nspname not in ( 'pg_catalog', 'information_schema' )
 	and C.relkind = 'i'
 	and nspname !~ '^pg_toast'
 order by
